@@ -5,7 +5,6 @@ Bundle-SymbolicName: JGlove2011;singleton:=true
 Bundle-Version: 1.0.0
 Bundle-Activator: jGlove.JGlovePlugin
 Bundle-Vendor: noDNA
-Bundle-Localization: plugin
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.ui.forms

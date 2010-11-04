@@ -4,8 +4,6 @@ import jGlove.filter.IFilter;
 import jGlove.shared.Source;
 
 /**
- * A concrete implementation of the abstract class Source.
- * <p>
  * A Sensor object is bound to a channel from the GloveBox
  * and provides methods to calibrate this channel.
  */
@@ -19,15 +17,8 @@ public class Sensor extends Source {
      * The index cannot be changed after the object is created.
      */
 	private int index;
-
-    /**
-     * the upper calibration-value, default is 1024
-     */
+	
     private int calibrationHigh = 1024;
-    
-    /**
-     * the lower calibration-value, default is 0
-     */
     private int calibrationLow = 0;
     
     /**
@@ -48,36 +39,16 @@ public class Sensor extends Source {
 	private double calibrationFactor = 1.0;
 	
     /**
-     * Creates a new Sensor with only the index
-     * @param index the index of this sensor, it cannot be changed later
-     */
-	public Sensor(int index) {
-		this.index = index;
-	}
-	
-    /**
-     * Creates a new Sensor
-     * @param index the index of this sensor, it cannot be changed later
-     * @param value a starting rawvalue for this sensor
-     * @param active wheather this sensor is active or not
-     * @param name the name of this sensor
-     * @param type the type of this sensor, one of ISource.TYPE_XXX constants
-     */
-	public Sensor(int index, int value, boolean active, String name, int type) {
-		this(index);
-		setValueRaw(value);
-		setActive(active);
-		setName(name);
-		setType(type);
-	}
-	
-    /**
      * Creates a new Sensor
      * @param index the index of this sensor, it cannot be changed later
      * @param value a starting rawvalue for this sensor
      */
 	public Sensor(int index, int value) {
-		this(index, value, false, Messages.Sensor_defaultname_prefix +index, 0);
+		this.index = index;
+		setValueRaw(value);
+		setActive(false);
+		setName(Messages.Sensor_defaultname_prefix +index);
+		setType(0);
 	}
 	
 	/**
@@ -106,23 +77,14 @@ public class Sensor extends Source {
 		}
 	}
 	
-	/* (non-Javadoc)
-	 * @see jGlove.shared.ISource#getValue()
-	 */
 	public int getValue() {
 		return valueRaw;
 	}
 	
-	/* (non-Javadoc)
-	 * @see jGlove.shared.ISource#getValueScaled()
-	 */
 	public int getValueScaled() {
 		return valueScaled;
 	}
 	
-	/* (non-Javadoc)
-	 * @see jGlove.shared.ISource#getValueMidi()
-	 */
 	public int getValueMidi() {
 		int midiValue = valueScaled / 2;
 		midiValue = Math.min(127, midiValue);
@@ -130,18 +92,10 @@ public class Sensor extends Source {
 		return midiValue;
 	}
 	
-	/**
-     * Returns the upper calibration value of this sensor
-	 * @return the upper calibration value
-	 */
 	public int getCalibrationHigh() {
 		return calibrationHigh;
 	}
 	
-    /**
-     * Returns the lower calibration value of this sensor
-     * @return the lower calibration value
-     */
 	public int getCalibrationLow() {
 		return calibrationLow;
 	}
@@ -175,9 +129,6 @@ public class Sensor extends Source {
 		return index;
 	}
 	
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
 	public String toString() {
 		return "i: "+index+", valueMidi: "+ getValueMidi() +", valueRaw: "+valueRaw+", valueScaled: "+valueScaled; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
 	}
