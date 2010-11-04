@@ -5,6 +5,7 @@ import jGlove.JGlovePlugin;
 import jGlove.shared.ISource;
 
 import java.util.Arrays;
+import java.util.List;
 
 import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.jface.viewers.CheckboxCellEditor;
@@ -114,7 +115,7 @@ public class FilterViewer extends Composite {
 		editors[1] = new TextCellEditor(filterTable, SWT.NULL);
 		editors[2] = new DialogCellEditor(filterTable) {
 			protected Object openDialogBox(Control cellEditorWindow) {
-				OptionList optionList = (OptionList)getValue();
+				List<Option> optionList = (List<Option>) getValue();
 				FilterOptionsDialog dialog = new FilterOptionsDialog(cellEditorWindow.getShell(), optionList);
 				dialog.open();
 				return null;
@@ -256,11 +257,11 @@ public class FilterViewer extends Composite {
 				result = filter.getName();
 				break;
 			case 2:
-                OptionList options = filter.getOptions();
-				if(options != null) {
-				    result = options.toString();
+				List<Option> options = filter.getOptions();
+				if(options == null) {
+					result = Messages.getString("FilterViewererror_nooptions"); //$NON-NLS-1$
                 } else {
-                    result = Messages.getString("FilterViewererror_nooptions"); //$NON-NLS-1$
+                	result = options.toString();
                 }
 				break;
 			default:

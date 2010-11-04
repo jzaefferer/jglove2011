@@ -2,6 +2,7 @@ package jGlove.filter;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.util.Arrays;
 
 
 
@@ -50,7 +51,7 @@ public class TiltFilter extends Filter implements FilterOptionChangedListener {
 		setName(FILTER_NAME);
         durationOption = new Option(Messages.getString("TiltFilter.optionname_duration"), 6, 2, 500); //$NON-NLS-1$
         durationOption.addFilterOptionChangeListener(this);
-        setOptions(new OptionList(new Option[]{durationOption}));
+        setOptions(Arrays.asList(new Option[]{durationOption}));
 	}
     
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {

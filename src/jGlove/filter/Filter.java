@@ -1,5 +1,7 @@
 package jGlove.filter;
 
+import java.util.List;
+
 /**
  * An abstract base implementation of <code>IFilter</code>.
  */
@@ -20,19 +22,19 @@ public abstract class Filter implements IFilter {
     /**
      * The optionlist of this filter (no default options)
      */
-    private OptionList options;
+    private List<Option> options;
     
     /* (non-Javadoc)
      * @see jGlove.filter.IFilter#getOptions()
      */
-    public OptionList getOptions() {
+    public List<Option> getOptions() {
         return options;
     }
     
     /* (non-Javadoc)
      * @see jGlove.filter.IFilter#setOptions(jGlove.filter.OptionList)
      */
-    public void setOptions(OptionList options) {
+    public void setOptions(List<Option> options) {
         this.options = options;
     }
 	

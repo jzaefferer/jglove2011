@@ -2,6 +2,7 @@ package jGlove.filter;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.util.Arrays;
 
 /**
  * An implementation of <code>Filter</code> that adds a configurable 
@@ -63,7 +64,7 @@ public class ModulationFilter extends Filter implements FilterOptionChangedListe
         durationOption.addFilterOptionChangeListener(this);
         rangeOption = new Option(Messages.getString("ModulationFilter.optionname_range"), 64, 3, 127); //$NON-NLS-1$
         rangeOption.addFilterOptionChangeListener(this);
-        setOptions(new OptionList(new Option[]{rangeOption, durationOption}));
+        setOptions(Arrays.asList(new Option[]{rangeOption, durationOption}));
 	}
     
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {

@@ -1,5 +1,7 @@
 package jGlove.filter;
 
+import java.util.List;
+
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.swt.SWT;
@@ -22,11 +24,11 @@ public class FilterOptionsDialog extends Dialog {
 
 	private Label message;
 	
-	private Option[] options;
+	private List<Option> options;
 	
-	protected FilterOptionsDialog(Shell parentShell, OptionList options) {
+	protected FilterOptionsDialog(Shell parentShell, List<Option> options) {
 		super(parentShell);
-		this.options = options.getOptions();
+		this.options = options;
 	}
 
 	protected Control createDialogArea(Composite parent) {
@@ -44,9 +46,7 @@ public class FilterOptionsDialog extends Dialog {
         message.setLayoutData(data);
         message.setFont(parent.getFont());
         
-        for(int i=0; i<options.length; i++) {
-        	final Option option = options[i];
-        	
+        for (final Option option : options) {
         	Label label = new Label(composite, SWT.NULL);
         	label.setText(option.getLabel());
         	data = new GridData(GridData.HORIZONTAL_ALIGN_END);

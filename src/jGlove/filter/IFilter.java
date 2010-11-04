@@ -2,6 +2,7 @@ package jGlove.filter;
 
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * A IFilter provides methods to filter int and double values and can have
@@ -60,13 +61,7 @@ public interface IFilter extends Serializable {
      * Returns the OptionList for this IFilter
      * @return the OptionList for this IFilter
      */
-    public OptionList getOptions();
-    
-    /**
-     * Sets the OptionList for this IFilter
-     * @param options the OptionList for this IFilter
-     */
-    public void setOptions(OptionList options);
+    public List<Option> getOptions();
     
     /**
      * override this method if your filter is a synthetic filter

@@ -2,6 +2,7 @@ package jGlove.filter;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.util.Arrays;
 
 /**
  * An implementation of <code>Filter</code> that smoothes the signal
@@ -49,7 +50,7 @@ public class SmoothingFilter extends Filter implements FilterOptionChangedListen
         durationOption.addFilterOptionChangeListener(this);
         cutOption = new Option(Messages.getString("SmoothingFilter.cutname"), 20, 0, 500); //$NON-NLS-1$
         cutOption.addFilterOptionChangeListener(this);
-        setOptions(new OptionList(new Option[]{cutOption, durationOption}));
+        setOptions(Arrays.asList(new Option[]{cutOption, durationOption}));
 	}
 	
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
