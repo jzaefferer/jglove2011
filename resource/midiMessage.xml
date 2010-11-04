@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?JGlove version="1.0.0"?>
+
+<!--
+type can be range, toogle, radio
+id is:
+ -1 for low cut/trigger
+ -2 for high cut/trigger
+ 0 - n for any option index
+ -->
+   <messages>
+
+     <midiMessage id="0">
+        <label>Control Change</label>
+        <description>Change a MIDI Controller with a sensor</description>
+        <help>Controls the volume of a specified channel. Specify low and high cuts to limit the range that will be used for the control. Activate the fullrange option, to rescale the smaller range to fullrange.
+              Example: 
+                low is on 60, high on 110
+                With fullrange disabled, effective range will be 60 to 110
+                With fullrange enabled, effective range will be 0 to 127
+        </help>
+        <option type="range" id="-1">
+            <label>Low Cut</label>
+            <description>Changes lower then this value will be ignored</description>
+            <help>Any changes lower then this value will be ignored. Value will set 0. Useful option that helps to suppress not wanted activities. Changes will only be effective within the limited range.</help>
+            <value>0</value>
+        </option>
+        <option type="range" id="-2">
+            <label>High Cut</label>
+            <description>Changes higher then this value will be ignored</description>
+            <help>Any changes higher then this value will be ignored. If the sensor value i higher it will set to the high cut value. Useful option that helps to suppress not wanted activities. Changes will only be effective within the limited range.</help>
+            <value>127</value>
+        </option>
+       <option type="range" id="1">
+            <label>MIDI Controller</label>
+            <description>MIDI Controller that will affected by the sensor</description>
+            <help>For further information check the MIDI reference and the manual of your MIDI application. MIDI Controller activities are for example amplitude, pan, LFO and filter changes.</help>
+            <value>0</value>
+        </option>
+        <option type="toggle" id="0">
+            <label>Full Range Mode</label>
+            <description>Rescale the smaller range to fullrange</description>
+            <help>By activating the fullrange option the smaller range is rescaled to fullrange (0..127).</help>
+            <value>0</value>  
+        </option>
+    </midiMessage>
+
+    <midiMessage id="1">
+        <label>Pitch Bender</label>
+        <description>Change the pitch bend with a sensor</description>
+        <help>Controls the pitch bend of a specified channel. Specify low and high cuts to limit the range that will be used for the pitch bend. Activate the fullrange option, to rescale the smaller range to fullrange.
+              Example: 
+                low is on 60, high on 110
+                With fullrange disabled, effective range will be 60 to 110
+                With fullrange enabled, effective range will be 0 to 127
+        </help>
+        <option type="range" id="-1">
+            <label>Low Cut</label>
+            <description>Changes lower then this value will be ignored</description>
+            <help>Any changes lower then this value will be ignored. Value will set to low cut value or 0 (fullrange mode). Useful option that helps to suppress not wanted activities. Changes will only be effective within the limited range.</help>
+            <value>0</value>
+        </option>
+        <option type="range" id="-2">
+            <label>High Cut</label>
+            <description>Changes higher then this value will be ignored</description>
+            <help>Any changes higher then this value will be ignored. Value will set to high cut value or 127 (fullrange mode). Useful option that helps to suppress not wanted activities. Changes will only be effective within the limited range.</help>
+            <value>127</value>
+        </option>
+        <option type="toggle" id="0">
+            <label>Full Range Mode</label>
+            <description>Rescale the smaller range to fullrange</description>
+            <help>By activating the fullrange option the smaller range is rescaled to fullrange (0..127).</help>
+            <value>0</value>
+        </option>
+    </midiMessage>    
+    
+    <midiMessage id="2" >
+        <label>Toggle Control</label>
+        <description>Switching between two controller settings</description>
+        <help>In this mode you can switch with the help to the high and low trigger from one controller setting to another controller setting.
+              If the sensor value passes the high trigger the MIDI control change settings for controller 2 will be sent.
+              If the sensor value passes the low trigger the MIDI control change settings for controller 1 will be sent.  
+        </help>
+        <option type="range" id="-1">
+            <label>Low Trigger</label>
+            <description>MIDI control change settings for controller 1 will be sent</description>
+            <help>The low trigger value defines the sensor value when you change from controller setting 2 back to controller setting 1. The low trigger value can not be larger than the high trigger value.</help>
+            <value>0</value>
+        </option>
+        <option type="range" id="-2">
+            <label>High Trigger</label>
+            <description>MIDI control change settings for controller 2 will be sent</description>
+            <help>The high trigger value defines the sensor value when you change from controller setting 1 to controller setting 2. The high trigger must always be larger than the value of the low trigger.</help>
+            <value>127</value>
+        </option>
+        <option type="range" id="0">
+            <label>MIDI Controller 1</label>
+            <description>MIDI Controller than will affected by the sensor</description>
+            <help>For further information check the MIDI reference and the manual of your MIDI application. MIDI Controller activities are for example amplitude, pan, LFO and filter changes.</help>
+            <value>0</value>
+        </option>
+        <option type="range" id="2">
+            <label>MIDI Controller 2</label>
+            <description>MIDI Controller than will affected by the sensor</description>
+            <help>Choose the MIDI Controller than will affected by the sensor. Value range 0..127. For further information check the MIDI reference and the manual of your MIDI application. MIDI Controller activities are for example amplitude, pan, LFO and filter changes.</help>
+            <value>0</value>
+        </option>
+        <option type="range" id="1">
+            <label>Value Controller 1</label>
+            <description>Value for the controller1 settings </description>
+            <help>Defines the value for the controller 1 settings. The controller value can set between 0 and 127. The affect of the value depends on the chosen controller. For further information check the MIDI reference and the manual of your MIDI application.</help>
+            <value>0</value>
+        </option>
+        <option type="range" id="3">
+            <label>Value Controller 2</label>
+            <description>Value for the controller2 settings</description>
+            <help>Defines the value for the controller 2 settings. The controller value can set between 0 and 127. The affect of the value depends on the chosen controller. For further information check the MIDI reference and the manual of your MIDI application.</help>
+            <value>0</value>
+        </option>
+    </midiMessage>
+    
+    
+    <midiMessage id="3">
+            <label>Note on/off</label>
+            <description>Turn a note on/off</description>
+            <help>In this mode you can send with the help of the high and low trigger a note_on and note_off command. You are able to define the note und the velocity for note_on and note_off.
+                  If the sensor value passes the high/low trigger the MIDI note_on/note_off command will be sent. 
+            </help>
+        <option type="range" id="-1">
+            <label>Low Trigger</label>
+            <description>When low trigger is passed the MIDI note_off will be sent.</description>
+            <help>If the sensor value is equal to the low trigger value the MIDI note_off command will be sent. The low trigger value can not be larger than the high trigger value.</help>
+            <value>0</value>
+        </option>
+        <option type="range" id="-2">
+            <label>High Trigger</label>
+            <description>When high trigger is passed the MIDI note_on will be sent.</description>
+            <help>If the sensor value is equal to the high trigger value the MIDI note_on command will be sent. The high trigger must always be larger than the value of the low trigger.</help>
+            <value>127</value>
+        </option>
+        <option type="note" id="0">
+            <label>Keyboard Note</label>
+            <description>Note that will be triggered with the help of the sensor</description>
+            <help>Choose the Note that will be triggered with the help of the sensor. Keyboard range between C-1 and G9. For further information check the MIDI reference. </help>
+            <value>60</value>
+        </option>
+        
+        <option type="range" id="1">
+            <label>Value Note_On</label>
+            <description>Velocity value for note_on command</description>
+            <help>Defines the velocity value for note_on command. The velocity value can set between 0 and 127.</help>
+            <value>127</value>
+        </option>        
+    </midiMessage>
+
+
+    
+    <midiMessage id="4">
+        <label>Toggle Program Change</label>
+        <description>Switching between two programs</description>
+        <help>In this mode you can switch with the help of the high and low trigger between two MIDI programs.
+              If the sensor value passes the low trigger the MIDI program 1 command will be sent.
+              If the sensor value passes the high trigger the MIDI program 2 command will be sent.
+        </help>
+        <option type="range" id="-1">
+            <label>Low Trigger</label>
+            <description>When low trigger is passed program 1 will be activated</description>
+            <help>If the sensor value is equal to the low trigger value the command MIDI program change for program 1 will be sent. The low trigger value can not be larger than the high trigger value.</help>
+            <value>0</value>
+       </option>
+        <option type="range" id="-2">
+            <label>High Trigger</label>
+            <description>When low trigger is passed program 2 will be activated</description>
+            <help>If the sensor value is equal to the high trigger value the command MIDI program change for program 2 will be sent. The high trigger must always be larger than the value of the low trigger.</help>
+            <value>127</value>
+        </option>
+        <option type="range" id="0">
+            <label>Program 1</label>
+            <description>MIDI Program Number 1</description>
+            <help>Select the number for program 1. The program number value can set between 0 and 127. For further information check the MIDI reference. </help>
+            <value>0</value>
+        </option>
+        <option type="range" id="1">
+            <label>Program 2</label>
+            <description>MIDI Program Number 2</description>
+            <help>Select the number for program 1. The program number value can set between 0 and 127. For further information check the MIDI reference. </help>
+            <value>1</value>
+        </option>
+    </midiMessage>
+
+    <midiMessage id="5">
+        <label>Trigger Control Change</label>
+        <description>Activating a control change by trigger</description>
+        <help>In this mode you can send a specific control change witch with the help of a trigger.
+              If the sensor value passes the trigger the MIDI control change will be sent.
+        </help>
+        <option type="range" id="-2">
+            <label>Trigger</label>
+            <description>When passing the trigger the MIDI control change will be sent</description>
+            <help>If the trigger value is equal to the sensor value the MIDI control change command will be send.</help>
+            <value>0</value>
+        </option>
+        <option type="range" id="0">
+            <label>MIDI Controller</label>
+            <description>MIDI Controller than will affected by the sensor</description>
+            <help>For further information check the MIDI reference and the manual of your MIDI application. MIDI Controller activities are for example amplitude, pan, LFO and filter changes.</help>
+            <value>0</value>
+        </option>
+        <option type="range" id="1">
+            <label>Value for Controller</label>
+            <description>Value for the controller settings</description>
+            <help>Defines the value for the controller. The controller value can set between 0 and 127. The affect of the value depends on the chosen controller. For further information check the MIDI reference and the manual of your MIDI application.</help>
+            <value>127</value>
+        </option>
+    </midiMessage>    
+
+    <midiMessage id="6">
+        <label>Trigger Program Change</label>
+        <description>Activating a program change by trigger</description>
+        <help>In this mode you can send a program change with the help of a trigger.
+              If the sensor value passes the trigger the MIDI program change will be send.
+        </help>
+        <option type="range" id="-2">
+            <label>Trigger</label>
+            <description>When passing the trigger the MIDI program change will be sent</description>
+            <help>If the trigger value is equal to the sensor value the MIDI program change command will be sent.</help>
+            <value>0</value>
+        </option>
+        <option type="range" id="0">
+            <label>MIDI Program</label>
+            <description>MIDI program than will be activated</description>
+            <help>Select a MIDI program number. The program number value can set between 0 and 127. For further information check the MIDI reference and the manual of your MIDI application.</help>
+            <value>0</value>
+        </option>
+    </midiMessage>    
+
+    <midiMessage id="7">
+            <label>Start/Stop</label>
+            <description>Control a MIDI sequencer by trigger</description>
+            <help>
+                  In this mode you can control a MIDI sequencer with the help of a trigger by sending the MIDI commands start and stop.
+                  There are 4 different modes. The alternation mode, the switch mode, the start mode and the stop mode.
+            </help>
+        <option type="range" id="-2">
+            <label>Trigger</label>
+            <description>When trigger is passed the start/stop command will be send</description>
+            <help>If the sensor value is equal to the low trigger value either the MIDI start or the MIDI stop command will be send. The high trigger must always be larger than the value of the low trigger.</help>
+            <value>127</value>
+        </option>
+        <option type="radio" id="0">
+            <label>Alternation Mode</label>
+            <description>When passing the high trigger the start/stop command will alternately be sent</description>
+            <help>If the high trigger value is equal to the sensor value the MIDI start and MIDI stop signal will alternately be sent.</help>
+            <value>0</value>
+        </option>
+        <option type="radio" id="1">
+            <label>Switch Mode</label>
+            <description>When passing the high/low triggers the start/stop command will be sent</description>
+            <help>If the high trigger value is equal to the sensor value the MIDI start command will be sent. If the low trigger value is equal to the sensor value the MIDI stop command will be sent.</help>
+            <value>1</value>
+        </option>
+        <option type="radio" id="2">
+            <label>Start Mode</label>
+            <description>When passing the high trigger the start command will be sent</description>
+            <help>If the high trigger value is equal to the sensor value the MIDI start command will be sent.</help>
+            <value>0</value>
+        </option>   
+        <option type="radio" id="3">
+            <label>Stop Mode</label>
+            <description>When passing the high trigger the stop command will be sent</description>
+            <help>If the high trigger value is equal to the sensor value the MIDI stop command will be sent.</help>
+            <value>0</value>
+        </option>
+    </midiMessage>    
+
+    <midiMessage id="8">
+        <label>Volume Control</label>
+        <description>Control the volume of a channel</description>
+        <help>
+            Controls the volume of a specified channel with a sensor. Specify lower and higher cuts to limit the range that will be used for the control. Activate the fullrange option, to rescale the smaller range to fullrange.
+            Example: 
+                low is on 60, high on 110
+                with fullrange disabled, effective range will be 60 to 110
+                with fullrange enabled, effective range will be 0 to 127
+        </help>
+        <option type="range" id="-1">
+            <label>Low Cut</label>
+            <description>Changes lower then this value will be ignored</description>
+            <help>Any changes lower then this value will be ignored. Value will set 0. Useful option that helps to suppress not wanted activities. Changes will only be effective within the limited range.</help>
+            <value>0</value>
+        </option>
+        <option type="range" id="-2">
+            <label>High Cut</label>
+            <description>Changes higher then this value will be ignored</description>
+            <help>Any changes higher then this value will be ignored. Value will set 127. Useful option that helps to suppress not wanted activities. Changes will only be effective within the limited range.</help>
+            <value>127</value>
+        </option>
+        <option type="toggle" id="0">
+            <label>Full Range Mode</label>
+            <description>Rescale the smaller range to fullrange</description>
+            <help>By activating the fullrange option the smaller range is rescaled to fullrange (0..127).</help>
+            <value>0</value>
+        </option>
+    </midiMessage>
+    
+    <midiMessage id="9">
+        <label>Trigger Volume Control</label>
+        <description>Control the volume of a channel in switch mode</description>
+        <help>
+            Controls the volume of a specified channel with a sensor. Specify lower and higher cuts to limit the range that will be used for the control. Activate the fullrange option, to rescale the smaller range to fullrange.
+            Example: 
+                low is on 60, high on 110
+                with fullrange disabled, effective range will be 60 to 110
+                with fullrange enabled, effective range will be 0 to 127
+        </help>
+        <option type="range" id="-1">
+            <label>Low Trigger</label>
+            <description>When low trigger is passed the volume will set the Low Value.</description>
+            <help>If the sensor value is equal to the low trigger value the MIDI volume change command ( value=low velocity ) will be sent. The low trigger value can not be larger than the high trigger value.</help>
+            <value>0</value>
+        </option>
+        <option type="range" id="-2">
+            <label>High Trigger</label>
+            <description>When high trigger is passed the MIDI note_on will be sent.</description>
+            <help>If the sensor value is equal to the low trigger value the MIDI volume change command ( value=high velocity ) will be sent. The high trigger must always be larger than the value of the low trigger.</help>
+            <value>127</value>
+        </option>
+        <option type="range" id="1">
+            <label>Low Value</label>
+            <description>Velocity value when passing the low trigger</description>
+            <help>Defines the velocity value that wil be send, if the low trigger value is equal to the sensor value. Normally the value is set to 0, which means that can not be heard anymore. </help>
+            <value>0</value>
+        </option>
+         <option type="range" id="0">
+            <label>High Value</label>
+            <description>Velocity value when passing the high trigger</description>
+            <help>Defines the velocity value that wil be send, if the high trigger value is equal to the sensor value. The velocity value can set between 0 and 127.</help>
+            <value>127</value>
+        </option>
+     </midiMessage>
+    
+ </messages>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+
+<toc label="JGlove Online Help" topic="html/welcome.html">
+	<topic label="Getting Started">
+   		<topic label="Introduction" href="html/gettingstarted/introduction.html" /> 
+		<topic label="Overview" href="html/gettingstarted/overview.html" />
+		<topic label="GUI Tutorial" href="html/gettingstarted/guitutorial.html" />
+		<topic label="System Requirements" href="html/gettingstarted/requirements.html" />
+   </topic>
+   <topic label="Views">
+   		<topic label="Sensor Setup" href="html/views/sensorsetup.html" />
+   		<topic label="Monitor"  href="html/views/monitor.html" /> 
+		<topic label="Calibration" href="html/views/calibration.html" /> 
+		<topic label="Gestures" href="html/views/gestures.html" /> 
+		<topic label="MIDI Configuration"  href="html/views/midiconfig.html" /> 
+		<topic label="Log Output" href="html/views/log.html" /> 
+		<topic label="Filter" href="html/views/filter.html" />
+		<topic label="Mouse" href="html/views/mouse.html" /> 
+		<topic label="Preferences" href="html/views/preferences.html" /> 
+   </topic>
+</toc>

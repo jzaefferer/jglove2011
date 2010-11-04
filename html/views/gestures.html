@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<title>Gestures</title>
+	<link rel="stylesheet" type="text/css" href="../help.css" />
+</head>
+
+<body>
+<h2>Gestures</h2>
+<h3>I What is a JGlove gesture?</h3>
+<p>
+A JGlove gesture depends on a selection of sensors. If a gesture is created, the values of the selected 
+sensors are stored. For example a simple "thumb up" can be stored as a gesture. By the fact that
+the Glovebox and JGlove can process any kind of sensors like force and tilt sensors, a JGlove 
+gestures can be of course a much more complex event.
+</p>
+<p>
+A once created and activated gesture will be diplayed and treated like any 
+other sensor, therefore it is possible to "midify" a gesture and add the 
+gesture value to the <a href="log.html">log output file</a>. 
+The active gesture sensor will also be displayed in all <a href="monitor.html">monitors</a>.
+</p>
+<p>
+An example: Midify your "thumb up" gesture, choose a "note on" and 
+play an "applause" sample with your <a href="midiconfig.html">MIDI</a> sample player, 
+when you do a "thumb up" gesture in your performance. 
+</p>
+
+<h3>II Types of gestures recognition</h3>
+<p>
+JGloves provides two kinds of gesture recognition.
+</p>
+<p>
+The standard recognition simply checks if a gesture is dectected. If a gesture is detected the 
+gesture sensor has the maximum value (127).  If the gesture is not recognized the 
+gesture sensor has the value 0. With the help of the tolerance parameter you can appoint 
+the accurance of a gesture. The lower the tolerance value, the more exact must be the gesture 
+before its been detected.
+</p>
+<p>
+JGlove provides also a more complex gesture recognition. If you click the approximation button 
+within the gesture creation window the approximation recognition is activated.<br/>
+Instead of simply checking if the gesture is reached or not, an approxmiation
+value is calculated.<br/>
+In this mode the gesture sensor can have all values between minimum (0) and maximum (127).<br/>
+With the help of advanced gesture cognition you can create full scaled sensors.
+The tolerance parameter influences the value of the gesture. The lower the tolerance value, 
+the lower will be the gesture sensor value.
+</p>
+
+<h3>III Creating a gesture.</h3>
+<ol>
+<li>Open the Sensor Setup ( <img src="../images/sensorSetup_titleBar.gif" alt="Sensor Setup" /> ).</li>
+
+<li>Select the senors you want to use for the gesture.</li>
+
+<li>Click the gesture button in the tool bar of the Sensor Setup View.<br/>
+    <img src="../images/sensorSetup_toolbar_gesture.gif" alt="sensor setup toolbar gesture button" />
+	<p>
+	The following wizard will open:<br/>
+	<img src="../images/creategesture_calibrate.gif" alt="Gesture Calibration" />
+</li>
+
+<li>Press the "Start Calibration" Button.<br/>
+    Now you have 3 seconds to set your gesture. If you are not satisfied, simply click the button again.
+</li>
+
+<li>Press the "Next >" Button.<br/>
+	<p>You will see the following page:<br/>
+	<img src="../images/creategesture_options.gif" alt="Gesture Options" />
+	</p>
+<p>
+   Now can rename your gesture (recommened), set the tolerance value and activate 
+   the approximation mode. If you like, you can also add a <a href="filter.html">filter</a>. 
+</p>
+</li>
+<li>If you want to finish and store the gesture press "Finish".<br/>
+    If you don't want to store the gesture and delete it, press "Cancel".
+</li>
+</body>
+</html>

@@ -1,0 +1,5 @@
+bin
+*~
+*.diff
+*.patch
+.DS_Store

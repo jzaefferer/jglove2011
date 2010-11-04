@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<title>Log Output</title>
+	<link rel="stylesheet" type="text/css" href="../help.css" />
+</head>
+
+<body>
+
+<h2>Log Output</h2>
+
+<h3>I. Description</h3>
+
+<p>
+   In the Log Output view you define the form, path and name of the stored log output file.
+   Enter a filename in the textfield or choose one via the filedialog by clicking on the
+   "Choose file..." button.<br/>
+   When you have chosen a file, you can press the record button to start.<br/>
+   The written format is CSV compatible.
+</p>
+<h3>II. Options</h3>
+
+<ol>
+<li>
+    <b>Timestamp:  </b>             
+    Write a timpstamp in every line 
+</li>
+<li>
+    <b>Timestamp at end of line: </b>
+                     If "Timestamp" is activated the timestamp will written at the end of every line
+</li>
+<li>
+    <b>Source name in header:</b>
+                     Display the name of the source in header. If this option is not activated a auto
+                     given name will displayed
+</li>
+<li>
+    <b>Include gestures:</b>
+                      Display active gestures or not
+</li>
+<li>
+    <b>Seperator:</b>
+                      Type the separator which is displayed between every value, name and timestamp
+</li>
+<li>
+    <b>Format: </b>    
+                      Value format which is written.<br/><br/>
+                      <b>10 Bit:</b> Original sensor value <br/>
+                      <b>8 &nbsp; Bit:</b> Calibrated values 0..255<br/>
+                      <b>7 &nbsp; Bit:</b> Calibrated MIDI values 0..127<br/>
+</li>
+<li>
+    <b>Preview </b>
+                      A short preview of the header and one line of the written log output is showed 
+                     for demonstration
+</li>
+<li>
+    <b>Filename </b>   
+                     Type a name for the written file. Necessary to create a log output file
+</li>
+<li>
+    <b>Start/Stop File</b>
+                     Toogle Button to start and stop the loggin. You must choos a file before the logging
+                     can start 
+</li>
+</ol>
+
+<div class="center">
+	<img src="../images/log_logging.gif" alt="Log Output Example" /><br/>
+	<div class="caption">Image: Log Outout Example</div>
+</div>
+
+</body>
+</html>

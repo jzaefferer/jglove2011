@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: JGlove Plug-in
+Bundle-SymbolicName: JGlove2011;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: jGlove.JGlovePlugin
+Bundle-Vendor: noDNA
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.forms
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: dom4j-1.6.1.jar,
+ .
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

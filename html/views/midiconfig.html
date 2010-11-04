@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<title>MIDI Configuration</title>
+	<link rel="stylesheet" type="text/css" href="../help.css" />
+</head>
+
+<body>
+<h2>MIDI Configuration</h2>
+<h3>I  What is MIDI?</h3>
+<p>
+MIDI (Musical Instrument Digital Interface) is the data communications system that enables
+music equipment, computers, and software from many different manufacturers to exchange 
+information. MIDI was introduced in 1983, but is today still the standard for exchanging information
+between digital music equipments (Keyboards, PCs ...)
+</p>
+<p>
+The information exchanged between two MIDI devices is musical in nature. MIDI information tells 
+a synthesizer, in its most basic mode, when to start and stop playing a specific note. 
+Other information shared includes the volume and modulation of the note.<br/>
+MIDI information can also be more hardware specific. It can tell a synthesizer to change sounds, 
+master volume, modulation devices, and even how to receive information.<br/>
+MIDI information can also be sent to indicate the starting and stopping points of a song or the 
+metric position within a song.<br/>
+Advanced MIDI applications are using the interface between computers and synthesizers to edit 
+and store sound information for the synthesizer on the computer.
+</p>
+<h3>II "Midify" your sensors</h3>
+
+Every JGlove source can be used to sent MIDI messages. This is the way to "midify" your source.
+
+<ol>
+	<li>
+		Select the Monitor ( <img src="../images/monitor_titlebar.gif" alt="Monitor titlebar" /> ).
+	</li>
+	<li>
+		Set global MIDI on, by clicking the "MIDI" icon ( <img src="../images/monitor_globalmidi.gif" alt="Monitor Global MIDI on/off" /> ) in the toolbar of the monitor.
+	</li>
+	<li>
+		Click the "MIDI" icon of one source display to configure the MIDI configuration
+   		of a source ( sensor, gesture, mouse ).<br/>
+   		<img src="../images/monitor_midiconfig.gif" alt="Monitor MIDI config button" />
+	</li>
+	<li>
+		Now you see the MIDI Configuration:
+		<div class="center">
+			<img src="../images/midiConfig+Help.gif" alt="MIDI Configuration Example" />
+			<div class="caption">Image: MIDI Configuration Example</div>
+		</div>
+		First step of configuring a message is to choose a type.
+	</li>
+	<li>
+		In the next step, you should adjust the general options.
+		<ul>
+			<li><b>Invert</b><br/>
+		        Activate this option to invert the sensor value that is used for triggering or send in a MIDI 
+        		message. For example value 0 will transformed into value 127.
+        	</li>
+        	<li><b>Channel</b><br/>
+		        You can choose a channel from the range of 1 to 16. The midi message will be sent on 
+        		this channel.
+        	</li>
+		</ul>
+	</li>
+	<li>
+		Adjust the individual MIDI option parameters.<br/>
+		Help on the options is available in the Help view ( <img src="../icons/help_topic.gif" alt="help icon" /> ).
+    	<p>
+    	You find 4 types of options:
+    	<ul>
+    		<li>
+    			<b>Spinner</b><br/>
+    			<img src="../images/midioption-spinner-127.gif" alt="Spinner" /><br/>
+    			A spinner is used to select a value between a certain range, in most cases between 0 and 127.<br/>
+    			You can either enter the number you want directly or press one of the two small buttons:<br/>
+    			The one pointing upwards will increase the value, the one pointing downwars will decrease the
+    			value. The longer you press one of the buttons, the faster the increase or decrease is performed.    			
+    		</li>
+    		<li>
+    			<b>Toggle</b><br/>
+    			<img src="../images/midioption-toggle-fullrange.gif" alt="Toggle" /><br/>
+    			A toggle is used to set a value on or off. Click the checkbox or the text beneath it
+    			to change its state.
+    		</li>
+    		<li>
+    			<b>Alternatives</b><br/>
+    			<img src="../images/midioption-radio-switch.gif" alt="Alternatives" /><br/>
+    			For options with a few different possible selections there are radio checkboxes.<br/>
+    			You can choose one of them by clicking the circle or the text beneath it.
+    		</li>
+    		<li>
+    			<b>Note</b><br/>
+    			<img src="../images/midioption-note.gif" alt="Note" /><br/>
+    			To choose a note you select the octave via the spinner and the note in the octave
+    			via the buttons, ranging from 'C' to 'B'.<br/>
+    			An octave of 5 and a 'C' is a C-5 or, in MIDI terms, the value 60.
+    		</li>
+    	</ul>
+	</li>
+</ol>
+
+<h3>III MIDI Messages</h3>
+
+A description of each MIDI message type and its options is integrated into the application:<br/>
+Just open the Help view by clicking the help icon in the MIDI config toolbar 
+( <img src="../icons/help_topic.gif" alt="help icon" /> ).<br/>
+As long as the help view is open, descriptions explaining all elements that you select inside the 
+MIDI config view are shown there.
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<title>Filter</title>
+	<link rel="stylesheet" type="text/css" href="../help.css" />
+</head>
+
+<body>
+<h2>Filter</h2>
+
+<h3>I. When should I use filters?</h3>
+<p>
+JGlove provides different filter types to influence the source values.<br/>
+The standard filter types ( tilt and smoothing filter) have the purpose of stabilizing
+the incoming values.
+<div class="center">
+	<img src="../images/graph-boot_nofilter.gif" alt="Two tilt sensors with no filter example" />
+	<div class="caption">Image: Two tilt sensors with no filter example</div>
+</div>
+<div class="center">
+	<img src="../images/graph-boot_tiltfilter.gif" alt="Two tilt sensors with tiltfilter example (duration 8)" />
+	<div class="caption">Image: Two tilt sensors with tiltfilter example (duration 8)</div>
+</div>
+<br/>
+The other two filter types (modulation and random Filter) can be applied for a more artificial and creative 
+usage. With the help of the modulation filter you can for example realize a 
+LFO (low frequency oscillator). Imagine a pitch bend controlled with
+your index finger that is patched with a low amplitude modulation:
+<div class="center">
+	<img src="../images/graph-nofilter.gif" alt="No filter example" />
+	<div class="caption">Image: No filter example</div>
+</div>
+<div class="center">
+	<img src="../images/graph-modulationfilter.gif" alt="Modulation filter (range 39, duration 14)" />
+	<div class="caption">Image: Modulation filter example (range 39, duration 14)</div>
+</div>
+</p>
+<h3>II. Standard filter types</h3>
+
+<ol>
+<li>Tilt filter
+	<p>  
+    The Tilt filter was specially created for tilt sensors. Tilt sensors have the disadvantage that
+    the values are vibrating. </br>
+    To minimize that problem JGlove offers a filter that stabilizes the signal through interpolation. 
+    The filter causes a small latency, depending on the Duration parameter value.
+	</p>
+	
+    Parameters:
+	<ul>
+	<li>Duration:<br/>
+		This parameter influences how much the signal is stabilized. The higher the
+		duration value, the more stabilized is the signal.</br>
+		Please also consider: The higher the duration value, the higher is the delay</br>
+		Choose as possible a low parameter value to avoid delay problems.
+    </li>
+    </ul>
+    <br/>
+</li>
+<li>Smoothing filter
+	<p>
+    Like the Tilt filter the Smoothing filter stabilizes the signal. The filter reduces trouble signals and
+    fast skips and smoothes the signal with in- and outfadings. 
+    In contrast to the Tilt filter this filter works without latency.
+    </p>
+    Parameters:
+	<ul>
+	<li>
+    Duration:<br/>
+    	This parameter influences how much the signal is stabilized.<br/>
+        The higher the duration value, the longer are the fadings.
+	</li>
+	<li>
+	Cut:<br/>
+		This parameter specifies at which value skips the filter starts to works.
+        If the difference of two successiv value is higher than the cut value the filter starts
+        working by fading the signal.
+    </li>
+    </ul>
+    <br/>
+</li>
+</ol>
+<h3>III. Artifical filter types</h3>
+<ol>
+<li>Modulation filter
+	<p>
+    The Modulation filter adds a sinus modulation to the incoming values. With the help of the filter 
+    type you can create special effects like e.g. a LF0 (low frequency oscillator) when choosing a 
+    Pitch Bend or a VCO (velocity oscillator) when choosing a Volume 
+    Control in the MIDI Configuration view (-> MIDI Configuration).
+	</p>
+	Parameters:
+	<ul>
+	<li>
+	    Duration: This parameter influences the wave length of the sinus modulation.
+	</li>
+	<li>
+	    Cut:        This parameter influences the amplitude of the sinus wave which will be added to
+	                  the orignal value.
+	</li>
+	</ul>
+	<br/>
+</li>
+
+<li>Random filter
+	<p>
+   This filter adds and substracts random values.<br/>
+   This filter has no parameters (subject of change).
+   </p>
+</li>
+</ol>
+
+<h3>IV. How to include filters.</h3>
+
+<ol>
+<li>Open the Monitor View or the Sensor Setup View</li>
+
+<li>Click the "spanner" button of any sensor.<br/>
+	Depending on the kind of sensor you choose, a dialog will open, containing
+	the following elements:
+	<div class="center">
+		<img src="../images/filterViewer.gif" alt="Filter Viewer" />
+		<div class="caption">Image: Filter Viewer</div>
+	</div>
+<li>Choose a filter type by pressing the "Add..." button.</li>
+	A dialog that lets you choose a filter will open:
+	<div class="center">
+		<img src="../images/filterViewer_add.gif" alt="Filter Viewer Add Dialog" />
+		<div class="caption">Image: Filter Viewer Add Dialog</div>
+	</div>
+<li>If you like you change filter parameters by clicking in the parameter field
+    and then clicking on the appearing "..." button. Now you are able to change all
+    available parameters.
+    <div class="center">
+		<img src="../images/filterViewer_options.gif" alt="Filter Viewer Options Dialog" />
+		<div class="caption">Image: Filter Viewer Options Dialog</div>
+	</div>
+</li>
+	
+<li>
+	If you like you can rename the filter name by clicking into the name field of the filter.
+</li>
+<li>
+	By clicking the checkbox button you are able to deactivate and activate a filter.
+</li>
+<li>
+	A marked filter can de deleted by pressing the "Remove" Button.
+</li>
+<li>
+	You are able to include several filters. If you want to add more filters repeat step 3. 
+</li>
+</ol>
+
+Tip: The use of filter causes processor performance. To keep the processor performance of JGlove low,
+       use filters only if necessary. 
+
+</body>
+</html>

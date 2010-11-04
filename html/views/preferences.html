@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<title>Preferences</title>
+	<link rel="stylesheet" type="text/css" href="../help.css" />
+</head>
+
+<body>
+<h2>Preferences</h2>
+<h3>I General</h3>
+Preferences are persistently stored. This way you can configure some
+important options once and they remain the same after you restart JGlove.
+
+<h3>II MIDI Options</h3>
+<div class="center">
+	<img src="../images/midiOptions.gif" alt="MIDI Options" />
+	<div class="caption">Image: MIDI Options</div>
+</div>
+You can choose one of the MIDI devices presented. If you want to
+connect to another program like Cubase, Reason etc. you need
+a software that works as a virtual midi cable.<br/>
+If you want to control a hardware sequencer, you need to select
+the port on which the hardware is connected. If you are not sure
+about the port, select one and click apply to test if the port is
+available. Otherwise, you get an error message.
+<p>
+Remember to turn the global MIDI switch on before trying to send
+midi messages. See <a href="midiconfig.html">MIDI configuration</a>
+for details.
+</p>
+<h3>III Performance Options</h3>
+<div class="center">
+	<img src="../images/performanceOptions.gif" alt="Performance Options" />
+	<div class="caption">Image: Performance Options</div>
+</div>
+Here you can set some options that can affect the performance.
+<ul>
+	<li>
+		<b>General performance</b><br/>
+		By reducing the general performance setting, you get a lower
+		cpu usage in exchange for slower updates of the hardware.<br/>
+		To be more precise, the interval between two updates of the GloveBox
+		is changed here:<br/>
+		"High" is an interval of 1ms, "Medium" is 10ms, "Low" is 50ms.<br/>
+		With the low setting, you can observe a slight jerking of the
+		bars that show the sensor values. When other software needs to run
+		smoothly, this maybe accetable.
+	</li>
+	<li>
+		<b>Sensor Setup display mode</b><br/>
+		In the <a href="sensorsetup.html">Sensor Setup</a>, you can choose how to display the values.<br/>
+		Instead of changing this setting each time, you can set a default here.
+	</li>
+	<li>
+		<b>Graphical monitor settings</b><br/>
+		You can configure the graphical monitor. When you click on Apply or OK, the
+		graphical monitor is updated and set to the new values.<br/>
+		See <a href="monitor.html">Monitor</a> for examples of different settings.
+	</li>
+</ul>
+</body>
+</html>

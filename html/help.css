@@ -1,0 +1,10 @@
+body {
+	font-family:Verdana, Arial, sans-serif;
+	font-size:90%;
+}
+
+ul { margin-top:1em; }
+li { margin-bottom:1em; }
+
+div.center { text-align:center; margin-top:1em; }
+div.caption { text-align:center; font-size:70%; font-style:italic; }

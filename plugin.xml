@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.1"?>
+<plugin>
+
+   <extension
+         id="application"
+         name="Bl"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="jGlove.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         id="JGloveID"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="JGlove2011.application"
+            name="JGlove2011">
+         <property
+               name="windowImages"
+               value="/JGloveProject/icons/gloveboxlogo.gif"/>
+         <property
+               name="aboutText"
+               value="JGlove&#x0A;&#x0A;Version 1.0&#x0A;&#x0A;noDNA GmbH 2005&#x0A;&#x0A;Jörn Zaefferer, Michael Rick, Michael Draws&#x0A;&#x0A;Build upon the Eclipse platform."/>
+         <property
+               name="aboutImage"
+               value="/JGloveProject/product_lg.gif"/>
+         <property
+               name="preferenceCustomization"
+               value="help_customization.ini"/>
+         <property
+               name="appName"
+               value="JGlove2011">
+         </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="jGlove.Perspective"
+            fixed="false"
+            id="jGlove.perspective"
+            name="JGlove"/>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            allowMultiple="false"
+            class="jGlove.sensor.SensorView"
+            icon="icons/gloveboxlogo.gif"
+            id="jGlove.app.views.calibrationView"
+            name="Sensor Setup"/>
+      <view
+            allowMultiple="true"
+            class="jGlove.midi.MidiConfigView"
+            icon="icons/midiconfig.gif"
+            id="jGlove.app.views.midiConfigView"
+            name="Configure MIDI Message"/>
+      <view
+            allowMultiple="false"
+            class="jGlove.help.HelpView"
+            icon="icons/help_topic.gif"
+            id="jGlove.app.views.helpView"
+            name="Help"/>
+      <view
+            allowMultiple="false"
+            class="jGlove.monitor.MonitorView"
+            icon="icons/monitor2.gif"
+            id="jGlove.app.views.monitorView"
+            name="Monitor"/>
+      <view
+            allowMultiple="false"
+            class="jGlove.gesture.GestureView"
+            icon="icons/thumbV2.gif"
+            id="jGlove.app.views.gestureView"
+            name="Gesture Setup"/>
+      <view
+            allowMultiple="false"
+            class="jGlove.monitor.GraphicalMonitorView"
+            icon="icons/monitor.gif"
+            id="jGlove.app.views.graphicalMonitorView"
+            name="Graphical Monitor"/>
+      <view
+            allowMultiple="false"
+            class="jGlove.logfile.LogView"
+            icon="icons/disk.gif"
+            id="jGlove.app.views.logView"
+            name="Log Ouput"/>
+      <view
+            allowMultiple="false"
+            class="jGlove.mouse.MouseView"
+            icon="icons/mices_mouse.gif"
+            id="jGlove.app.views.mouseView"
+            name="Mouse Pad"/>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="JGlove.openCalibrationViewCommand"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="M1+C"/>
+      <key
+            commandId="JGlove.openMidiViewCommand"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="M1+M"/>
+   </extension>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            description="Open Editors and Views"
+            id="JGlove.openSet"
+            label="Open"
+            visible="true">
+         <menu
+               id="openMenu"
+               label="&amp;Open">
+            <separator name="openGroup"/>
+         </menu>
+         <action
+               class="jGlove.monitor.OpenGraphicalMonitorViewAction"
+               icon="icons/monitor.gif"
+               id="JGlove.app.actions.openGraphicalMonitor"
+               label="Open Graphical Monitor"
+               menubarPath="openMenu/openGroup"
+               style="push"
+               toolbarPath="openGroup"
+               tooltip="Open Graphical Monitor"/>
+         <action
+               class="jGlove.gesture.OpenGestureViewAction"
+               icon="icons/thumbV2.gif"
+               id="JGlove.app.actions.openGestureViewAction"
+               label="Open Gesture Setup"
+               menubarPath="openMenu/openGroup"
+               style="push"
+               toolbarPath="openGroup"
+               tooltip="Open Gesture Setup"/>
+         <action
+               class="jGlove.logfile.OpenLogView"
+               icon="icons/disk.gif"
+               id="JGlove.app.actions.openLogView"
+               label="Open Log Output"
+               menubarPath="openMenu/openGroup"
+               style="push"
+               toolbarPath="openGroup"
+               tooltip="Open Log Output"/>
+         <action
+               class="jGlove.mouse.OpenMouseViewAction"
+               icon="icons/mices_mouse.gif"
+               id="JGlove.app.actions.openMouseView"
+               label="Open Mouse Pad"
+               menubarPath="openMenu/openGroup"
+               style="push"
+               toolbarPath="openGroup"
+               tooltip="Open Mouse View"/>
+      </actionSet>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="JGlove.category"
+            id="JGlove.openCalibrationViewCommand"
+            name="JGlove.openCalibrationEditorCommand"/>
+      <command
+            categoryId="JGlove.category"
+            id="JGlove.openMidiViewCommand"
+            name="JGlove.openMidiViewCommand"/>
+      <category
+            id="JGlove.category"
+            name="JGlove.category"/>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="jGlove.preferences.PerformancePreferences"
+            id="jGlove.preferences.PerformancePage"
+            name="Performance Options"/>
+      <page
+            class="jGlove.preferences.MidiPreferences"
+            id="jGlove.preferences.MidiPreferences"
+            name="Setup MIDI Device"/>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer class="jGlove.preferences.PreferenceInitializer"/>
+   </extension>
+   <extension
+         point="org.eclipse.help.toc">
+      <toc
+            file="toc.xml"
+            primary="true"/>
+   </extension>
+</plugin>

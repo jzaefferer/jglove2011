@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<title>Sensor Setup</title>
+	<link rel="stylesheet" type="text/css" href="../help.css" />
+</head>
+
+<body>
+<h2>Sensor Setup</h2>
+
+<h3>I. Description</h3>
+<p>
+The Sensor Setup shows a sensor display for each <a href="../gettingstarted/requirements.html">Glovebox</a> sensor. 
+The Glovebox sends the data for 24 channels. In most cases not every channel 
+is used. The quantity of the used channels depends on the connected devices (e.g. datagloves, data foodsoles).
+</p>
+<p>
+With the JGlove software you are able to configure the setup for your individuel needs and 
+equipment.
+</p>
+
+<div class="center">
+	<img src="../images/sensorSetup.gif" alt="Sensor Setup Example" />
+	<div class="caption">Image: Sensor Setup Example</div>
+</div>
+
+<h3>II. Display</h3>
+<p>
+By clicking the checkbox button you are able to activate and deactivate each sensor.
+An activated senor will be visible in the monitor and the graphical monitor.
+</p>
+<p>
+Also the type of the sensor, the name and the current value of the sensor will be shown
+in the display.
+</p>
+<p>
+By clicking the calibrate button ( <img src="../icons/0gif_newbutton_pure_callibr.gif" /> )
+you can modify names and types of the sensors, add <a href="filter.html">filters</a> and <a href="calibration.html">calibrate</a> them.
+ </p>
+<h3>III. Tool Bar Options</h3>
+
+<ol>
+<li>Selection preset ( <img src="../icons/selection.gif" /> )
+	<p>
+	With this option you can choose, create and remove sensor selection presets. <br/>
+	If you made a new selection, you can choose the option "New Preset...", enter a 
+	name and store the selection.<br/>
+	If you want to delete a selection, first choose the selection and click the option
+	"Remove preset..."<br/>
+	By clicking on the icon itself instead of the arrow at its side, you can go
+	through the available presets.
+	</p>
+</li>
+<li>Sensor Preset ( <img src="../icons/selectionsternchen.gif" /> )
+	<p>
+	With this option can choose, create and remove sensor presets.<br/>
+	If you have configured the sensors (name, types, selection), you can choose 
+	the option "New Preset...", enter a	name and store the preset.<br/> 
+	If you want to delete a preset, first choose the preset and click the option "Remove preset..."<br/>
+	By clicking on the icon itself instead of the arrow at its side, you can go
+	through the available presets.
+	</p>
+</li>
+<li>Display Mode ( <img src="../icons/monitor2.gif" /> )
+	<p>
+	You are able to switch between the modes by clicking the option.
+	It`s possible to select 3 different display modes for the sensor view.
+	</p>
+	<ul>
+		<li>
+			10 Bit (Fullrange)<br/>
+			The original sensor value will be displayed. Value range is between 0 and 1023.
+			Every type and every individuell sensor has its own range.
+		</li><li>
+			8 Bit <br/>
+			If you calibrate a sensor with JGlove the displayed value is scaled to a 8 Bit value range (0 - 255).
+		</li><li>
+			7Bit (MIDI)<br/>
+			Because of the MIDI specification all values will scaled down for all MIDI application 
+			to a 7Bit range (0..127).
+		</li>
+	</ul>
+	<br/>
+</li>
+<li>Sensor Calibration ( <img src="../icons/0gif_newbutton_pure_callibr.gif" /> )
+	<p>
+	Click this option to calibrate the selection. For details check the <a href="calibration.html">Calibration chapter</a>.
+	</p>
+</li>
+<li>
+5. Gesture ( <img src="../icons/thumbV2.gif" /> )
+	<p>
+	Click this option to create a <a href="gestures.html">new gesture</a>.
+	</p>
+</li>
+</ol>
+</body>
+</html>

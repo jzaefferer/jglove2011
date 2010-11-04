@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<title>Calibration</title>
+	<link rel="stylesheet" type="text/css" href="../help.css" />
+</head>
+
+<body>
+<h2>Calibration</h2>
+<h3>I. Why should I calibrate?</h3>
+
+<p>The GloveBox and JGlove can handle different types of sensors like bend, force and tilt sensors.
+Every type and every individuell sensor has its own range, which is normally somewhere between 
+0 and 1000. To compare the different sensors it is often necessary that all sensors
+have the same range.</p>
+<p>
+When you calibrate a sensor with JGlove the range is scaled to a 8 bit range (0 - 255).
+Espacially when you want to <a href="midiconfig.html">"midify"</a> your senors it is necessary to 
+calibrate them. Because of the MIDI specification, a range of 7 bit (0 - 127) is 
+necessary for MIDI apllications. You get the best result with calibrated sensors.
+</p>
+
+<h3><a name="howtocalibrate"></a>II. How to calibrate a sensor</h3>
+<div class="center">
+	<img src="../images/calibrateSensor.gif" alt="Calibration Wizard" />
+	<div class="caption">Image: Calibration Wizard</div>
+</div>
+<ol>
+<li>
+	Open the Sensor Setup ( <img src="../images/sensorSetup_titleBar.gif" alt="Sensor Setup" /> ).
+</li>
+
+<li>
+	Click the "spanner" ( <img src="../icons/0gif_newbutton_pure_callibr.gif" alt="Calibrate Icon" /> ) button of one sensor.
+</li>
+
+<li>
+	If you want you can rename the sensor and change the type of the sensor.
+</li>
+<li>Add a <a href="filter.html">filter</a> to the sensor.<br/>
+    Tip: Sometimes it is useful to add the filter before the calibration.
+          Especially when calibrating a tilt sensor it is suggested to add
+          the tilt filter before the calibration. It will reduces "flicker"
+          and makes it easier to calibrate.
+</li>
+<li>Press the "Calibrate this sensor now" Button.
+	<p>
+	    Now you have 3 seconds time to set the sensor in your "maximum" position.<br/>
+    	And then you have 3 seconds time to set the "minimum" position.
+	</p>
+	<p>
+    	Tip: If you want you can exchange the "maximum" and "minimum" position while
+          calibrating. JGlove will automaticaly take the higher value as the maximum.
+	</p>
+</li>
+<li>Check with the help of the "Calibrated Range" bar if the calibration is like you want it.<br/>
+    If you are not satisfied with the result repeat step 5.
+</li>
+<li>If you want to keep the calibration press "Finish".
+    If you don´t want to keep the calibration press "Cancel". Canceling will
+    restore the old calibration, if there was any.
+</li>
+</ol>
+
+<h3>III. How to calibrate a selection of sensors</h3>
+<ol>
+<li>
+	Open the Sensor Setup ( <img src="../images/sensorSetup_titleBar.gif" alt="Sensor Setup" /> ).
+</li>
+
+<li>Choose a selection of sensors you want to calibrate.</li>
+
+<li>Click the "spanner" button in the tool bar of the Sensor Setup ( <img src="../images/sensorSetup_toolbar_calibra.gif" alt="Sensor Setup" /> ).</li>
+
+<li>Choose the selected sensors with the help of the "Next >" and "< Back" buttons
+   and calibrate the sensor (see <a href="#howtocalibrate">"How to calibrate a sensor"</a> 3 - 6).
+</li>
+<li>If you want to keep the changed calibrations press "Finish".<br/>
+    If you don´t want to keep the changed calibrations press "Cancel".
+    </li>
+</ol>
+</body>
+</html>
