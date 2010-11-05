@@ -19,9 +19,9 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.sound.midi.MidiDevice.Info;
 import javax.sound.midi.MidiUnavailableException;
 import javax.sound.midi.ShortMessage;
-import javax.sound.midi.MidiDevice.Info;
 
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.preference.IPreferenceStore;
@@ -366,9 +366,6 @@ public class Core {
 		ObjectInputStream objectInputStream = null;
 		try {
 			FileInputStream fis = new FileInputStream(JGlovePlugin.getFile(persistantfilename));
-			if (fis == null) {
-				return;
-			}
 			objectInputStream = new ObjectInputStream(fis);
 			sensors = (Sensor[]) objectInputStream.readObject();
 			gestures = (List) objectInputStream.readObject();
@@ -404,9 +401,6 @@ public class Core {
 		ObjectOutputStream objectOutputStream = null;
 		try {
 			FileOutputStream fos = new FileOutputStream(JGlovePlugin.getFile(persistantfilename));
-			if(fos == null) {
-				return;
-			}
 			objectOutputStream = new ObjectOutputStream(fos);
 			objectOutputStream.writeObject(sensors);
 			objectOutputStream.writeObject(gestures);
